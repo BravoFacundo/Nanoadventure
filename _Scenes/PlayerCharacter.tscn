@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://biuev70novwi5"]
+
+[ext_resource type="Texture2D" uid="uid://cd5g21b4rjots" path="res://Assets/Sprites/male_body.png" id="1_8mdmy"]
+[ext_resource type="Script" path="res://_Scripts/PlayerController.gd" id="1_ftgdt"]
+[ext_resource type="Texture2D" uid="uid://begkyn8oxjod4" path="res://Assets/Sprites/male_leg.png" id="2_1hgxu"]
+[ext_resource type="Texture2D" uid="uid://nupbst24klpk" path="res://Assets/Sprites/male_head.png" id="3_ltn02"]
+[ext_resource type="Texture2D" uid="uid://sni8bcsg1tvg" path="res://Assets/Sprites/male_arm.png" id="4_47d3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5qto"]
+size = Vector2(8.04522, 8.23314)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08qhr"]
+load_path = "res://.godot/imported/characters.png-920fda93b3e029fd3b4fe5d74dee6338.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h5sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_08qhr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_ftgdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -3.91074)
+scale = Vector2(1, 0.95)
+shape = SubResource("RectangleShape2D_v5qto")
+
+[node name="MaleLeg" type="Sprite2D" parent="."]
+position = Vector2(1.00001, -4.38693)
+scale = Vector2(0.0186647, 0.0186647)
+texture = ExtResource("2_1hgxu")
+
+[node name="MaleBody" type="Sprite2D" parent="."]
+position = Vector2(1.65327, -5.69347)
+scale = Vector2(0.053449, 0.0265735)
+texture = ExtResource("1_8mdmy")
+
+[node name="MaleArm" type="Sprite2D" parent="."]
+position = Vector2(1.52261, -5.24435)
+scale = Vector2(0.025664, 0.0259821)
+texture = ExtResource("4_47d3s")
+
+[node name="MaleLeg2" type="Sprite2D" parent="."]
+position = Vector2(2.04523, -4.38693)
+scale = Vector2(0.0186647, 0.0186647)
+texture = ExtResource("2_1hgxu")
+
+[node name="MaleHead2" type="Sprite2D" parent="."]
+position = Vector2(4, -4)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("3_ltn02")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.04523, -5.95477)
+enabled = false
+zoom = Vector2(8, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2h5sw")
