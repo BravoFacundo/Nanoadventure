@@ -10,7 +10,6 @@
 size = Vector2(8.04522, 8.23314)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08qhr"]
-load_path = "res://.godot/imported/characters.png-920fda93b3e029fd3b4fe5d74dee6338.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2h5sw"]
 animations = [{
